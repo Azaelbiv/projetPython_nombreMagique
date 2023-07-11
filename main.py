@@ -20,19 +20,26 @@ def demander_nombre(nb_min, nb_max):
 
 NOMBRE_MIN = 1
 NOMBRE_MAX = 10
-NOMBRE8MAGIQUE = random.randint(1,10)
+NOMBRE_MAGIQUE = random.randint(1, 10)
+NB_VIES = 4
+vies = NB_VIES
 
 nombre = 0
 
-while not nombre == NOMBRE8MAGIQUE:
+while not nombre == NOMBRE_MAGIQUE and vies > 0:
+    print(f"Il vous reste {vies} vies.")
     nombre = demander_nombre(NOMBRE_MIN, NOMBRE_MAX)
-    if nombre == NOMBRE8MAGIQUE:
+    if nombre == NOMBRE_MAGIQUE:
         print("felicitations, vous avez gagné! \nLe nombre magique est bel et bien égal à " + str(nombre))
 
-    elif nombre > NOMBRE8MAGIQUE:
+    elif nombre > NOMBRE_MAGIQUE:
         print("le nombre magique est plus petit que " + str(nombre))
+        vies -= 1
 
-    elif nombre < NOMBRE8MAGIQUE:
+    elif nombre < NOMBRE_MAGIQUE:
         print("le nombre magique est plus grand que " + str(nombre))
+        vies -= 1
     else:
         print("Veillez entrer un nombre!")
+if vies == 0:
+    print(f"Vous avez perdu, le nombre magique était bien {NOMBRE_MAGIQUE}")
