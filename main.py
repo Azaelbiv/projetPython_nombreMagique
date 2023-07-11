@@ -6,7 +6,11 @@ def demander_nombre(nb_min, nb_max):
             nombre_int = int(nombre_str)
 
         except ValueError:
-            print("Erreur: Vous devez rentrer un nombre: ressayez!")
+            print("Erreur: Vous devez rentrer un nombre. Réessayez!")
+        else:
+            if nombre_int < nb_min or nombre_int > nb_max:
+                print(f"Erreur: Vous devez rentrer un nombre compris (entre {nb_min} et {nb_max}). Réessayez!")
+                nombre_int = 0
 
     return nombre_int
 
