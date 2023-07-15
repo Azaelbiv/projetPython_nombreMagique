@@ -1,7 +1,20 @@
-import random
+import numpy as np
+import matplotlib.pyplot as plt
 
+x = np.linspace(0, 2*np.pi, 30)
+y1 = np.cos(x)
+y2 = np.sin(x)
 
-def demander_nombre(nb_min, nb_max):
+fig, ax = plt.subplots()
+ax.plot(x, y1, 'b:o')
+ax.plot(x, y2, 'r--')
+ax.set_title("fonction cosinus et sinus")
+ax.plot(x, y1, label="cos(x)")
+ax.plot(x, y2, label="sin(x)")
+plt.legend()
+plt.show()
+
+"""def demander_nombre(nb_min, nb_max):
     nombre_int = 0
     while nombre_int == 0:
         nombre_str = input(f"Quel est le nombre magisue (entre {nb_min} et {nb_max}) ? ")
@@ -42,4 +55,4 @@ while not nombre == NOMBRE_MAGIQUE and vies > 0:
     else:
         print("Veillez entrer un nombre!")
 if vies == 0:
-    print(f"Vous avez perdu, le nombre magique était bien {NOMBRE_MAGIQUE}")
+    print(f"Vous avez perdu, le nombre magique était bien {NOMBRE_MAGIQUE}")"""
