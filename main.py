@@ -1,13 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = np.array([0, 1, 1, 0, 0])
-y = np.array([0, 0, 1, 1, 0])
+circle = np.linspace(0, 2*np.pi, 40)
+x = np.cos(circle)
+y = np.sin(circle)
+
 
 fig, ax = plt.subplots()
 ax.plot(x, y)
 ax.axis("equal")
-ax.axis([-1, 2, -1, 2])
+ax.axis([-2, 2, -2, 2])
 plt.show()
 
 """def demander_nombre(nb_min, nb_max):
