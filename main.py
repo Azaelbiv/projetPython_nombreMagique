@@ -1,17 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = np.linspace(0, 2*np.pi, 30)
-y1 = np.cos(x)
-y2 = np.sin(x)
+x = np.array([0, 1, 1, 0, 0])
+y = np.array([0, 0, 1, 1, 0])
 
 fig, ax = plt.subplots()
-ax.plot(x, y1, 'b:o')
-ax.plot(x, y2, 'r--')
-ax.set_title("fonction cosinus et sinus")
-ax.plot(x, y1, label="cos(x)")
-ax.plot(x, y2, label="sin(x)")
-plt.legend()
+ax.plot(x, y)
+ax.axis("equal")
+ax.axis([-1, 2, -1, 2])
 plt.show()
 
 """def demander_nombre(nb_min, nb_max):
