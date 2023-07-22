@@ -1,46 +1,27 @@
-def myfunction(food):
-    for x in food:
-        print(x)
+# creation d'une classe avec python.
+class Myclass:
+    x = 5
+    y = 2
 
 
-fruits = ["mangues", "fraises", "bananes", "oranges", "ananas"]
-myfunction(fruits)
-
-print(type(fruits))
-
-
-# la fonction recursive
-def tri_recusive(k):
-    if k > 0:
-        resultat = k + tri_recusive(k - 1)
-        print(resultat)
-    else:
-        resultat = 0
-        return resultat
+z = Myclass()
+print(z.x)
+print(z.y)
+print(z.x + z.y)
 
 
-#tri_recusive(4)
-
-# la fonction lambda(c'est une petite fonction anonime de la forme: lambda argument : expression)
-
-x = lambda nbre: nbre + 4
-reponse = x(7)
-print(f"la reponse de la valeur de lambda est : {reponse} ")
+class Personne:
+    def __init__(self, nom, age):  # utilisation du constructeur __init__(cette methode est appelée automatiquement
+        self.nom = nom             # lorsque la class est lancée.
+        self.age = age
 
 
-def lambdafunct(n):
-    print()
-    return lambda x: x * n
+p = Personne("john", 26)
+print(p.nom)
 
 
-ledouble = lambdafunct(2)
-letriple = lambdafunct(3)
-print("le double de " + str(reponse) + " est " + str(ledouble(reponse)))
-print("le triple de " + str(reponse) + " est " + str(letriple(reponse)))
-
-
-
-"""import numpy as np
+"""
+import numpy as np
 import matplotlib.pyplot as plt
 
 tab1 = np.array([[1, 2, 3, 4], [2, 5, 3, 7]])
