@@ -9,18 +9,22 @@ class Personne:
 
 
 class Etudiant(Personne):
-    def __init__(self, fname, lname, age):
-        Personne.__init__(self, fname, lname, age)
+    def __init__(self, fname, lname, age, annee):
+        super().__init__(fname, lname, age)
         self.fname = fname
         self.lname = lname
+        self.graduation = annee
 
 
 nom = input("quel est votre nom ? ")
 prenom = input("quel est votre prénom ? ")
 age = input("quel est votre age ? ")
 age_int = int(age)
-affichage = Etudiant(prenom, nom, age_int)
+grad_year = input("quelle année avez vous eu votre bac ? ")
+year_int = int(grad_year)
+affichage = Etudiant(prenom, nom, age_int, year_int)
 affichage.printname()
+print(f"you were graduate to your baccalaureat in {affichage.graduation}")
 
 
 """try:
