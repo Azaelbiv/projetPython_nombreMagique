@@ -1,26 +1,39 @@
-# creation d'une classe avec python.
-class Myclass:
-    x = 5
-    y = 2
-
-
-z = Myclass()
-print(z.x)
-print(z.y)
-print(z.x + z.y)
-
-
 class Personne:
-    def __init__(self, nom, age):  # utilisation du constructeur __init__(cette methode est appelée automatiquement
-        self.nom = nom             # lorsque la class est lancée.
+    def __init__(self, fname, lname, age):
+        self.fname = fname
+        self.lname = lname
         self.age = age
 
+    def printname(self):
+        print(f"vous vous appelez: {self.fname} {self.lname}, vous avez {self.age} ans")
 
-p = Personne("john", 26)
-print(p.nom)
+
+class Etudiant(Personne):
+    def __init__(self, fname, lname, age):
+        Personne.__init__(self, fname, lname, age)
+        self.fname = fname
+        self.lname = lname
 
 
-"""
+nom = input("quel est votre nom ? ")
+prenom = input("quel est votre prénom ? ")
+age = input("quel est votre age ? ")
+age_int = int(age)
+affichage = Etudiant(prenom, nom, age_int)
+affichage.printname()
+
+
+"""try:
+        age_int = int(age_str)
+    except ValueError:
+        print("Erreur : Vous devez entrer une nombre pour l'age")
+
+
+p = Personne(nom, age)
+print(p)
+
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
