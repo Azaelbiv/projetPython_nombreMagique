@@ -15,6 +15,9 @@ class Etudiant(Personne):
         self.lname = lname
         self.graduation = annee
 
+    def welcome(self):
+        print(f"Welcome {self.fname} {self.lname} to the class of {self.graduation}")
+
 
 nom = input("quel est votre nom ? ")
 prenom = input("quel est votre prénom ? ")
@@ -25,6 +28,7 @@ year_int = int(grad_year)
 affichage = Etudiant(prenom, nom, age_int, year_int)
 affichage.printname()
 print(f"you were graduate to your baccalaureat in {affichage.graduation}")
+affichage.welcome()
 
 
 """try:
