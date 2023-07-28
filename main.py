@@ -1,4 +1,13 @@
-class Personne:
+
+
+import pandas
+fiecher = dir(pandas)
+for i in fiecher:
+    print(i)
+print(len(fiecher))
+
+
+"""class Personne:
     def __init__(self, fname, lname, age):
         self.fname = fname
         self.lname = lname
@@ -31,7 +40,7 @@ print(f"you were graduate to your baccalaureat in {affichage.graduation}")
 affichage.welcome()
 
 
-"""try:
+try:
         age_int = int(age_str)
     except ValueError:
         print("Erreur : Vous devez entrer une nombre pour l'age")
